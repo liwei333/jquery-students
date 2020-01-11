@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+       .wrapper {
+            width: 700px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            user-select:none;
+        }
+        .my-turn-page li {
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            display: inline-block;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .my-turn-page li.active {
+            background-color:  #428bca;
+            color: aliceblue;
+        }
+        .page-size, .my-turn-page  {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper"></div>
+    <script src="../jquery-3.3.1.js"></script>
+    <script src="./index.js"></script>
+    <script>
+        $('.wrapper').page({
+            allPageSize: 10,
+            pageSize: 5,
+            nowPage: 1,
+            changePageCb: function (page) {
+                console.log('cb', page);
+            }
+        })
+    </script>
+</body>
+</html>
